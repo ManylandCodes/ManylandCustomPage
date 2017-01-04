@@ -1,0 +1,626 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <title>Manyland  - Custom</title> 
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> 
+    <style> 
+    @import url(http://fonts.googleapis.com/css?family=VT323); 
+    @import url(http://fonts.googleapis.com/css?family=Press+Start+2P); 
+     
+    body { 
+        background-color: black; 
+        color: white; 
+        background-image: url(http://static.manyland.netdna-cdn.com/media/background-zoomed.png); 
+        margin: 0; 
+        margin-bottom: 80px; 
+        font-family: 'VT323', monospace; 
+    } 
+    </style> 
+</head> 
+<body id="body"> 
+ 
+<style> 
+<!-- Help files are sometimes inlined, so inlining CSS --> 
+ 
+.inlineHtmlHelp { 
+    font-family: 'VT323', monospace; 
+} 
+ 
+.inlineHtmlHelp { 
+    text-align: left; 
+    padding-right: 40px; 
+} 
+ 
+.inlineHtmlHelp p, 
+.inlineHtmlHelp li { 
+    font-size: 20px; 
+    line-height: 1.4em; 
+} 
+ 
+.isFullAccount .ifNotLoggedIn { 
+    display: none; 
+} 
+ 
+h1 { 
+    border-bottom: 2px solid #533; 
+    padding-bottom: 4px; 
+    font-size: 23px; 
+    text-align: center; 
+    margin-bottom: 30px; 
+} 
+ 
+h2 { 
+    text-align: center; 
+    margin-top: 60px; 
+    margin-bottom: 20px; 
+    color: #422; 
+    padding: 2px; 
+    font-size: 30px; 
+    font-weight: bold; 
+    border-top: 2px solid rgb(184,154,139); 
+    padding-top: 50px; 
+} 
+ 
+h2.followsH1 { 
+    margin-top: 0; 
+    border-top: none; 
+} 
+ 
+.titleWord { 
+} 
+ 
+h2 a { 
+    display: block; 
+    height: 20px; 
+} 
+ 
+h2 a.anchor { 
+    display: inline; 
+} 
+ 
+.subtitle { 
+    font-size: 11px; 
+    color: white; 
+    color: #755; 
+    display: block; 
+} 
+ 
+#body .content { 
+    background-color: rgb(208,188,178); 
+    position: relative; 
+    width: 92%; 
+    max-width: 780px; 
+    overflow-x: hidden; 
+    margin-left: auto; 
+    margin-right: auto; 
+    top: 40px; 
+    color: black; 
+    padding: 30px; 
+    border-radius: 5px; 
+} 
+ 
+a { 
+    color: #755; 
+} 
+ 
+.chartPosition { 
+    margin-bottom: 5px; 
+} 
+ 
+.additionalInfo { 
+    color: #fff; 
+    position: relative; 
+    width: 220px; 
+    float: right; 
+    padding: 20px; 
+    margin-left: 40px; 
+    margin-bottom: 40px; 
+} 
+ 
+p, ul, li { 
+    font-family: 'VT323', monospace; 
+    font-size: 24px; 
+} 
+ 
+ul li { 
+    margin-bottom: 10px; 
+    list-style-type: square; 
+} 
+ 
+ol li { 
+    list-style-type: decimal; 
+} 
+ 
+.twitterName { 
+    text-transform: none; 
+} 
+ 
+.twitter { 
+    width: 220px; 
+    margin-left: auto; 
+    margin-right: auto; 
+    margin-bottom: 20px; 
+} 
+ 
+.nonEmphasized a, 
+a.nonEmphasized { 
+    color: #555; 
+    text-decoration: none; 
+} 
+ 
+.smallerParagraph { 
+    margin-left: auto; 
+    margin-right: auto; 
+    text-align: center; 
+} 
+ 
+.fullImage { 
+    text-align: center; 
+    width: 100%; 
+} 
+ 
+iframe { 
+    margin-left: auto; 
+    margin-right: auto; 
+    width: 780px; 
+    height: 439px; 
+    display: block; 
+} 
+ 
+#soundCredits { 
+    display: none; 
+} 
+ 
+.moreInfo { 
+    display: none; 
+} 
+ 
+.places strong { 
+    font-size: 110%; 
+} 
+ 
+#moreNews { 
+    display: none; 
+} 
+ 
+#showMoreNews { 
+    margin-bottom: 50px; 
+    font-weight: bold; 
+} 
+ 
+.interactingSample, 
+.dynamicSample { 
+    width: 90%; 
+} 
+ 
+.interactingSample pre, 
+.dynamicSample pre, 
+.htmlSample pre { 
+    font-family: 'Press Start 2P', monospace; 
+    text-transform: uppercase; 
+    background-color: #444; 
+    color: #eee; 
+    letter-spacing: 1px; 
+    font-size: 10px; 
+    padding: 10px; 
+    line-height: 25px; 
+} 
+ 
+.dynamicSample pre { 
+    color: #000; 
+    background-color: #ddd; 
+} 
+ 
+.htmlSample pre { 
+    font-size: 110%; 
+    font-family: monospace; 
+    text-transform: none; 
+} 
+ 
+.interactingSample strong { 
+    font-weight: normal; 
+    color: #ffa; 
+} 
+ 
+.dynamicSample strong { 
+    font-weight: normal; 
+    color: #080; 
+} 
+ 
+h3 { 
+    color: #322; 
+    font-size: 26px; 
+    margin-top: 40px; 
+    padding-top: 40px; 
+    border-top: 2px solid #555; 
+} 
+ 
+.footnote { 
+    opacity: .7; 
+} 
+ 
+.important { 
+    font-size: 110%; 
+} 
+ 
+p.extraSpace { 
+    margin-top: 35px; 
+    margin-bottom: 5px; 
+} 
+ 
+h4 { 
+    font-size: 24px; 
+    opacity: .8; 
+    margin-top: 50px; 
+} 
+ 
+.properTable { 
+    border-collapse: collapse; 
+} 
+ 
+.properTable td, 
+.properTable th { 
+    font-size: 150%; 
+    border: 2px solid rgba(0,0,0,.3); 
+    padding: 10px; 
+} 
+ 
+.properTable th { 
+    background-color: rgb(185,155,140); 
+} 
+ 
+.properTable td.interactingSampleCell { 
+    font-size: 70%; 
+    font-family: 'Press Start 2P', monospace; 
+    text-transform: uppercase; 
+    line-height: 1.9em; 
+} 
+ 
+.timeConverterTable { 
+    margin-top: 30px; 
+    font-size: 125%; 
+    text-transform: uppercase; 
+    position: relative; 
+    margin-left: auto; 
+    margin-right: auto; 
+    border-collapse: collapse; 
+} 
+ 
+.timeConverterTable th, 
+.timeConverterTable td { 
+    text-align: left; 
+    border: 1px solid rgba(0,0,0,.5); 
+    padding: 3px; 
+} 
+ 
+.timeConverterTable th, 
+.timeConverterNow { 
+    background-color: #fff; 
+} 
+ 
+.timeConverterTable td { 
+    text-align: center; 
+} 
+ 
+td.checkmark { 
+    font-size: 110%; 
+    color: rgb(50,100,50); 
+} 
+ 
+.helpMore { 
+    opacity: .6; 
+} 
+ 
+#adToggler { 
+    display: none; 
+    background-color: white; 
+    border-radius: 10px; 
+    padding: 15px; 
+    text-align: center; 
+} 
+ 
+#adToggler input { 
+    font-family: 'VT323', monospace; 
+    font-size: 100%; 
+} 
+ 
+.supportAnswer { 
+    width: 90%; 
+    display: none; 
+    border-radius: 10px; 
+    background-color: rgb(250,250,250); 
+    padding: 10px; 
+    padding-left: 20px; 
+    padding-right: 20px; 
+} 
+ 
+.supportQuestion { 
+    text-decoration: underline; 
+    cursor: pointer; 
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none; 
+    -webkit-tap-highlight-color: rgba(0,0,0,0); 
+    -webkit-tap-highlight-color: transparent; 
+    color: #755; 
+} 
+ 
+.javaScriptCode, 
+.tree { 
+    background-color: white; 
+    color: black; 
+    font-family: monospace; 
+    font-size: 120%; 
+    padding: 10px; 
+} 
+ 
+.tree, .tree ul, .tree li { 
+     position: relative; 
+     font-family: monospace; 
+     font-size: 16px; 
+     margin-bottom: 0; 
+     padding-bottom: 0; 
+} 
+ 
+.tree ul { 
+    list-style: none; 
+    padding-left: 32px; 
+} 
+ 
+.tree li { 
+    list-style-type: none; 
+    padding-top: 5px; 
+    padding-bottom: 15px; 
+} 
+ 
+.tree li::before, .tree li::after { 
+    content: ""; 
+    position: absolute; 
+    left: -12px; 
+} 
+ 
+.tree li::before { 
+    border-top: 1px solid #000; 
+    top: 9px; 
+    width: 8px; 
+    height: 0; 
+} 
+ 
+.tree li.separator::before { 
+    border-top: none; 
+} 
+ 
+.tree li::after { 
+    border-left: 1px solid #000; 
+    height: 100%; 
+    width: 0px; 
+    top: 2px; 
+} 
+ 
+.tree ul > li:last-child::after { 
+    height: 8px; 
+} 
+ 
+.infoExample { 
+    opacity: .6; 
+} 
+ 
+.infoTip { 
+    opacity: .75; 
+    font-style: italic; 
+} 
+ 
+label { 
+    text-decoration: underline; 
+} 
+ 
+.inlineHtmlHelp h2, 
+.inlineHtmlHelp h3, 
+.inlineHtmlHelp h4 { 
+    margin-top: 80px; 
+    padding: 10px; 
+    background-color: white; 
+    line-height: 1.3em; 
+    font-size: 20px; 
+    border-top: 0; 
+} 
+ 
+.inlineHtmlHelp p { 
+    text-transform: none !important; 
+} 
+ 
+.inlineHtmlHelp .interactingSample, 
+.inlineHtmlHelp .interactingSample { 
+    margin-left: 20px; 
+} 
+ 
+.inlineHtmlHelp h2 { 
+    border-top: none; 
+    text-transform: uppercase; 
+} 
+ 
+.inlineHtmlHelp li { 
+    text-transform: none; 
+} 
+ 
+.backerNames { 
+    color: rgb(100,100,0); 
+    text-align: center; 
+    line-height: 1.5em; 
+    padding-left: 20px; 
+    padding-right: 20px; 
+} 
+ 
+.backerName { 
+    display: inline-block; 
+    margin-left: 10px; 
+    margin-right: 10px; 
+} 
+ 
+.backerName img { 
+    padding-right: 5px; 
+} 
+ 
+.steam p { 
+    font-family: 'Press Start 2P', monospace; 
+    text-transform: uppercase !important; 
+    font-size: 100%; 
+} 
+ 
+</style> 
+ 
+  
+ 
+<script> 
+function clicked(name) { $('#' + name + 'Answer').toggle(); } 
+</script> 
+ 
+<div class="content"> 
+ 
+<h1><a href="/"><img src="http://static.manyland.netdna-cdn.com/media/logo-large.png" alt="Manyland"/></a></h1> 
+ 
+<p>Thanks for being in Manyland! What's your question or feedback?</p> 
+ 
+ 
+<ul> 
+ 
+<li> 
+    <p class="supportQuestion" onclick="clicked('help')">How can I find help?</p> 
+    <p class="supportAnswer" id="helpAnswer"> 
+    <a href="/info">Here's our general help page</a>. We also have a help board where you can ask questions. 
+    To get the help board, please visit <a href="/helptown">Helptown</a>. 
+    In the first hut, you'll find a container you can collect. In it there's a help board for you to post a new thread in. 
+    </p> 
+</li> 
+ 
+<li> 
+    <p class="supportQuestion" onclick="clicked('locked')">I'm locked/ banned, what do I do?</p> 
+    <div class="supportAnswer" id="lockedAnswer"> 
+    <p>Oops, you may have received too many flag-reports by other long-term manyzens and are temporarily locked. 
+    The first lock fades out after some time, the second lock takes longer, and sometimes the first lock is also extended in time. 
+    Please check the <a href="/info#etiquette">etiquette and terms</a> to find out more about what might have been the 
+    reasons for the lock.</p> 
+ 
+    <p>Please note typical reasons for flags-reports include</p> 
+    <ul> 
+    <li>being disrespectful or rude to others</li> 
+    <li>swearing a lot in public places</li> 
+    <li>killing others outside of a voluntary game</li> 
+    <li>using multiple accounts</li> 
+    <li>recreations of copyrighted or trademarked characters</li> 
+    <li>posting private information or account-related information on boards</li> 
+    <li>deleting good structures or placing bad structures</li> 
+    <li>posting irrelevant content to boards</li> 
+    <li>being below 13 years of age</li> 
+    <li>very offensive creations</li> 
+    <li>and other things that go against <a href="/info#etiquette">the etiquette, the writable etiquette, or the terms</a></li> 
+    </ul> 
+     
+    </div> 
+     
+</li> 
+ 
+<li> 
+    <p class="supportQuestion" onclick="clicked('person')">I have an issue with another person</p> 
+    <p class="supportAnswer" id="personAnswer"> 
+    If you feel someone's treating you wrongly, or they do something against the <a href="/info#etiquette">etiquette or terms</a>, 
+    please feel free to flag-report them. To do so, click them and then click the flag button. If you write a flag 
+    report, please be as specific as possible. Thanks! 
+    </p> 
+</li> 
+ 
+<li> 
+    <p class="supportQuestion" onclick="clicked('load')">Manyland doesn't load for me</p> 
+    <p class="supportAnswer" id="loadAnswer"> 
+    One common cause of loading issues is the lack of websockets. To see if you have websockets, please visit 
+    <a href="http://websocketstest.com" target="_blank">this page</a> and check if all 
+    checkmarks are green. If there's any checkmark that's not green and you don't know about websockets, 
+    please talk to your system administrator, parent, or other tech person 
+    nearby to ask how to enable websockets for all ports.<br/><br/> 
+     
+    If you get all green checkmarks above and it looks like another loading issue, please <a href="mailto:we@manyland.com">email</a> us and tell us: 
+    What browser and operating system you have; What specifically the load page or error says; Any other information you can think of that might be relevant. Thanks! 
+    </p> 
+</li> 
+ 
+<li> 
+    <p class="supportQuestion" onclick="clicked('error')">Manyland shows a failwhale error</p> 
+    <p class="supportAnswer" id="errorAnswer"> 
+    We automatically log errors and try to fix them. 
+     
+    If there's a repeated error, please post a new thread on the Failwhale board, describing the issue.  
+    To get the Failwhale board, please visit <a href="/helptown">Helptown</a>. 
+    In the first hut, you'll find a container you can collect, and there's a Failwhale hunt board where you can add threads to. 
+    </p> 
+</li> 
+ 
+<li> 
+    <p class="supportQuestion" onclick="clicked('someoneElse')">I'm being logged in as someone else</p> 
+    <div class="supportAnswer" id="someoneElseAnswer"> 
+     
+    <p>If you're on a shared computer and you're auto-logged-in as someone else, please try this:</p> 
+     
+    <ol> 
+    <li>Log out of Manyland (click on the avatar, then click logout, then click the link)</li> 
+    <li>Go to <a href="http://www.google.com">google.com</a> and log out of Google, if logged in</li> 
+    <li>Go to <a href="http://www.facebook.com">facebook.com</a> and log out of Facebook, if logged in</li> 
+    <li>Go to <a href="http://www.amazon.com">amazon.com</a> and log out of Amazon, if logged in</li> 
+    <li>Now go back to Manyland and hit the Login button. You should now be asked for your credentials. (When logging out again later, make sure you also log out of Google/ Facebook/ Amazon.)</li> 
+    </ol> 
+     
+    </div> 
+</li> 
+ 
+<li> 
+    <p class="supportQuestion" onclick="clicked('copyright')">I've seen a copyright issue.</p> 
+    <p class="supportAnswer" id="copyrightAnswer">If you see a pixel-by-pixel clone or problematic, non-Fair-Use recreations of trademarked characters or similar issues, please open the item's context menu (on desktop, right-click; on tablets, long-tap) and flag it. If you are a copyright owner with concerns, please <a href="/info-copyright">see this page</a>.</p> 
+</li> 
+ 
+<li> 
+    <p class="supportQuestion" onclick="clicked('suggestion')">I want to suggest a feature.</p> 
+    <p class="supportAnswer" id="suggestionAnswer">We love to hear your suggestions! Please go to <a href="/helptown">Helptown</a>. 
+    In the first hut, you'll find a container you can collect. In it there's a suggestion board for you to post a new thread in.</p> 
+</li> 
+ 
+<li> 
+    <p class="supportQuestion" onclick="clicked('feedback')">I want to give feedback not listed above.</p> 
+    <p class="supportAnswer" id="feedbackAnswer">We appreciate your feedback. Please go to <a href="/helptown">Helptown</a>. In the first hut, you'll find a container you can collect. In it there's a "Manyland Miscellaneous" board for you to post a new thread in. Want to contact us privately? Please <a href="mailto:we@manyland.com">email</a> us.</p> 
+</li> 
+ 
+</ul> 
+ 
+ 
+</div> 
+ 
+ 
+<script type="text/javascript"> 
+    var _gaq = _gaq || []; 
+    _gaq.push(['_setAccount', 'UA-60595-51']); 
+    _gaq.push(['_trackPageview']); 
+ 
+    (function() { 
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; 
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; 
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); 
+    })(); 
+</script> 
+ 
+<script> 
+function handleOnLoad() { 
+    if ( isFramed() ) { 
+        var bodyElm = document.getElementById('body'); 
+        if (bodyElm) { 
+            bodyElm.style.backgroundImage = 'none'; 
+            bodyElm.style.backgroundColor = 'rgb(208,188,178)'; 
+        } 
+    } 
+} 
+ 
+function isFramed() { 
+    return window != window.top; 
+} 
+ 
+window.onload = handleOnLoad; 
+</script> 
+ 
+</body> 
+</html>
